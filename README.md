@@ -1,5 +1,5 @@
 # Pico-RssMaker
-Very basic RSS plugin for Pico. Generates RSS feed of all pages with a date. The plugin is based on:
+Very basic RSS plugin for Pico. Generates RSS feed of all pages with a date. Tested on my installation of pico (1.0.4). The plugin is based on:
 
 * [Pico-RSS-Plugin](https://github.com/gilbitron/Pico-RSS-Plugin)
 * [Pico_Sitemap](https://github.com/DaveKin/Pico_Sitemap)
