@@ -12,4 +12,9 @@ I put this together by combining the techniques of the two above plugins as I co
 I'm not great at PHP (part of the reason I use Pico in the first place). If you see something that can be improved, I'll be very grateful. I only made this for a website I manage, but thought it best to give back to the community.
 
 # Installation
-Copy to RssMaker.php to the plugins folder.
+1. Copy to RssMaker.php to the plugins folder.
+2. Add the following line to your config.php:
+
+    $config['RssMaker.enabled'] = true;
+    
+3. Your feed URL will be example.com/feed. Navigate here to make sure it works.
