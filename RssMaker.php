@@ -13,16 +13,19 @@
  */
 final class RssMaker extends AbstractPicoPlugin
 {
-    private $giveFeed = false;
-    private $feedTitle = '';
-    private $baseURL = '';
+
+    //variable declarations
+
+    private $giveFeed = false;  // boolean to determine if the user has typed example.com/feed
+    private $feedTitle = '';    // title of the feed will be the site title
+    private $baseURL = '';      // this will hold the base url
     /**
      * This plugin is enabled by default?
      *
      * @see AbstractPicoPlugin::$enabled
      * @var boolean
      */
-    protected $enabled = true;
+    protected $enabled = false;
 
     /**
      * This plugin depends on ...
@@ -57,8 +60,8 @@ final class RssMaker extends AbstractPicoPlugin
      */
     public function onConfigLoaded(array &$config)
     {
-        // your code
-        $this->giveFeed = false;
+        // Get site data
+
         $this->feedTitle = $config['site_title'];
         $this->baseURL = $config['base_url'];
     }
@@ -72,7 +75,7 @@ final class RssMaker extends AbstractPicoPlugin
      */
     public function onRequestUrl(&$url)
     {
-        // your code
+        // If example.com/feed, then true
         if($url == 'feed') {$this->giveFeed = true;}
     }
 
@@ -282,11 +285,12 @@ final class RssMaker extends AbstractPicoPlugin
         array &$nextPage = null
     )
     {
-        // your code
+        // If this is the feed link, return RSS feed
         if ($this->giveFeed) {
             //Sitemap found, 200 OK
             header($_SERVER['SERVER_PROTOCOL'] . ' 200 OK');
             header("Content-Type: application/rss+xml; charset=UTF-8");
+
             //RSS Start
             $rss = '<?xml version="1.0" encoding="utf-8"?>';
             $rss .= '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">';
