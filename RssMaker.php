@@ -7,9 +7,9 @@
  * Simply remove the events you don't need and add your own logic.
  *
  * @author  Matt Barnard
- * @link    not yet
+ * @link    https://github.com/picocms/Pico/blob/master/plugins/DummyPlugin.php
  * @license http://opensource.org/licenses/MIT The MIT License
- * @version 1.0a
+ * @version 1.0
  */
 final class RssMaker extends AbstractPicoPlugin
 {
