@@ -13,13 +13,11 @@ I'm not great at PHP (part of the reason I use Pico in the first place). If you 
 
 # Installation
 1. Copy to RssMaker.php to the plugins folder.
-2. Add the following line to your config.php:
-
-    $config['RssMaker.enabled'] = true;
-    
+2. Add the following line to your config.yml: `RssMaker.enabled = true`
 3. Your feed URL will be example.com/feed. Navigate here to make sure it works.
 
 # Compatibility
 I've not extensively tested the plugin, but it's worked fine on the following installations (testament to the hard work the Pico team put into backwards compatibility in Pico 2).
 * 1.0.4
 * 2.0.2
+* 2.0.4
