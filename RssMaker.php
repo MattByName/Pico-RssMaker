@@ -3,9 +3,6 @@
 /**
  * RssMaker - basic RSS feed generator for Pico
  *
- * You're a plugin developer? This template may be helpful :-)
- * Simply remove the events you don't need and add your own logic.
- *
  * @author  Matt Barnard
  * @link    https://github.com/picocms/Pico/blob/master/plugins/DummyPlugin.php
  * @license http://opensource.org/licenses/MIT The MIT License
@@ -91,9 +88,12 @@ final class RssMaker extends AbstractPicoPlugin
             $rss .= $this->feedTitle;
             $rss .= '</title>';
             $rss .= '<atom:link href="{{ base_url }}/feed" rel="self" type="application/rss+xml" />';
+            
+            //Reverse order like in a blog
+            $reverse_pages = array_reverse($pages);
 
             //Page loop
-            foreach ($pages as $page) {
+            foreach ($reverse_pages as $page) {
                 if (!empty($page['date'])) {
                     $rss .= '<item>';
                     $rss .= '<title>';
