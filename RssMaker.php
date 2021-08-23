@@ -87,7 +87,9 @@ final class RssMaker extends AbstractPicoPlugin
             $rss .= '<channel><title>';
             $rss .= $this->feedTitle;
             $rss .= '</title>';
-            $rss .= '<atom:link href="{{ base_url }}/feed" rel="self" type="application/rss+xml" />';
+            $rss .= '<atom:link href="';
+            $rss .= $this->baseURL;
+            $rss .= 'feed" rel="self" type="application/rss+xml" />';
             
             //Reverse order like in a blog
             $reverse_pages = array_reverse($pages);
