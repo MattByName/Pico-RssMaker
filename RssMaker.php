@@ -109,7 +109,7 @@ final class RssMaker extends AbstractPicoPlugin
                     $rss .= '</link>';
 
                     $rss .= '<pubDate>';
-                    $rss .= date('c', $page['time']);
+                    $rss .= date(DATE_RFC2822, $page['time']);
                     $rss .= '</pubDate>';
 
                     $rss .= '<guid>';
