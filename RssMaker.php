@@ -94,7 +94,7 @@ final class RssMaker extends AbstractPicoPlugin
 
             //Page loop
             foreach ($reverse_pages as $page) {
-                if (!empty($page['date'])) {
+                if (!empty($page['date']) && !$page['hidden']) {
                     $rss .= '<item>';
                     $rss .= '<title>';
                     $rss .= $page['title'];
